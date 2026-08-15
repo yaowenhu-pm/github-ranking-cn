@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 星榜 — 开源项目 Star 排行 · 中文版</title>
+<meta name="description" content="每日更新的 GitHub 开源项目 Star 排行榜，中文简介，总榜与各语言分榜。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>★</text></svg>">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">每日更新 · 中文简介 · THE GITHUB STAR INDEX</p>
+    <h1>GitHub<span class="star">★</span>星榜</h1>
+    <p class="dateline" id="dateline">数据加载中</p>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="榜单切换"></nav>
+
+<div class="toolbar">
+  <input type="search" id="search" placeholder="在当前榜单里搜索项目名或简介" aria-label="搜索">
+  <span class="count" id="count"></span>
+</div>
+
+<main>
+  <ol class="ranking" id="ranking"></ol>
+  <p class="empty" id="empty" hidden>没有匹配的项目</p>
+</main>
+
+<footer>
+  <p>数据来自 GitHub Search API · 简介由 DeepSeek 翻译 · 致敬 <a href="https://github.com/EvanLi/Github-Ranking">EvanLi/Github-Ranking</a></p>
+  <p><a href="https://github.com/yaowenhu-pm/github-ranking-cn">本站源码</a> · 每日 08:30（北京时间）自动更新</p>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
