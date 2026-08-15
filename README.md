@@ -7,6 +7,7 @@
 ## 榜单
 
 - 总榜 Top 100（按 star 数）
+- AI 榜、Agent 榜各 Top 100：按 topic 多路检索合并去重（AI 榜合并 ai / machine-learning / deep-learning / llm，Agent 榜合并 agent / agents / ai-agents / ai-agent / llm-agent / autonomous-agents / multi-agent）；topic 为仓库自标签，蹭标签的错位项目维护在脚本内 EXCLUDE 排除清单
 - 语言分榜：Python / JavaScript / TypeScript / Go / Java / Rust 各 Top 100
 - 每行显示较前一日的排名升降（升 / 降 / 持平 / 新上榜）
 

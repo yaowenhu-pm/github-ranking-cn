@@ -22,16 +22,47 @@ DATA_DIR = os.path.join(ROOT, "data")
 RANKINGS_PATH = os.path.join(DATA_DIR, "rankings.json")
 TRANSLATIONS_PATH = os.path.join(DATA_DIR, "translations.json")
 
-# (榜单 key, 中文名, GitHub search 查询)
+# (榜单 key, 中文名, GitHub search 查询列表——多路查询合并去重后按 star 取前 100)
 LISTS = [
-    ("overall", "总榜", "stars:>10000"),
-    ("python", "Python", "language:Python stars:>1000"),
-    ("javascript", "JavaScript", "language:JavaScript stars:>1000"),
-    ("typescript", "TypeScript", "language:TypeScript stars:>1000"),
-    ("go", "Go", "language:Go stars:>1000"),
-    ("java", "Java", "language:Java stars:>1000"),
-    ("rust", "Rust", "language:Rust stars:>1000"),
+    ("overall", "总榜", ["stars:>10000"]),
+    ("ai", "AI", [
+        "topic:ai stars:>2000",
+        "topic:machine-learning stars:>2000",
+        "topic:deep-learning stars:>2000",
+        "topic:llm stars:>2000",
+    ]),
+    ("agent", "Agent", [
+        "topic:agent stars:>500",
+        "topic:agents stars:>500",
+        "topic:ai-agents stars:>500",
+        "topic:ai-agent stars:>500",
+        "topic:llm-agent stars:>500",
+        "topic:autonomous-agents stars:>500",
+        "topic:multi-agent stars:>500",
+    ]),
+    ("python", "Python", ["language:Python stars:>1000"]),
+    ("javascript", "JavaScript", ["language:JavaScript stars:>1000"]),
+    ("typescript", "TypeScript", ["language:TypeScript stars:>1000"]),
+    ("go", "Go", ["language:Go stars:>1000"]),
+    ("java", "Java", ["language:Java stars:>1000"]),
+    ("rust", "Rust", ["language:Rust stars:>1000"]),
 ]
+
+# topic 是仓库自己打的标签，AI/Agent 榜有蹭标签的错位项目，人工排除。
+# 只剔除明显不属于该榜的（数据库/运维工具/面试资料等），AI 边缘项目保留。
+EXCLUDE = {
+    "ai": {
+        "Snailclimb/JavaGuide", "supabase/supabase", "netdata/netdata",
+        "ClickHouse/ClickHouse", "dbeaver/dbeaver", "JuliaLang/julia",
+        "binhnguyennus/awesome-scalability", "Developer-Y/cs-video-courses",
+    },
+    "agent": {
+        "Snailclimb/JavaGuide", "thedaviddias/Front-End-Checklist",
+        "pingcap/tidb", "novuhq/novu", "alibaba/nacos", "alibaba/arthas",
+        "siyuan-note/siyuan", "jeecgboot/JeecgBoot", "1Panel-dev/1Panel",
+        "Dokploy/dokploy", "2noise/ChatTTS",
+    },
+}
 
 TRANSLATE_BATCH = 25
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
@@ -128,9 +159,18 @@ def main():
 
     lists = {}
     seen = {}  # full_name -> repo dict（跨榜去重，翻译只做一次）
-    for key, cn_name, query in LISTS:
+    for key, cn_name, queries in LISTS:
         print(f"拉取 {cn_name} ...")
-        items = gh_search(query)
+        merged = {}
+        for query in queries:
+            for it in gh_search(query):
+                merged.setdefault(it["full_name"], it)
+            time.sleep(3)  # search API 限流 10 次/分钟（未认证）
+        excluded = EXCLUDE.get(key, set())
+        items = sorted(
+            (it for it in merged.values() if it["full_name"] not in excluded),
+            key=lambda it: it["stargazers_count"], reverse=True,
+        )[:100]
         rows = []
         for rank, it in enumerate(items, 1):
             full_name = it["full_name"]
@@ -148,7 +188,6 @@ def main():
             rows.append(row)
             seen.setdefault(full_name, row)
         lists[key] = rows
-        time.sleep(3)  # search API 限流 10 次/分钟（未认证）
 
     # 增量生成中文导读：缓存里没有、英文简介变了、或还是旧版直译格式（v!=2）的才送模型
     api_key = os.environ.get("DEEPSEEK_API_KEY")

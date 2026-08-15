@@ -1,5 +1,7 @@
 const TAB_NAMES = {
   overall: "总榜",
+  ai: "AI",
+  agent: "Agent",
   python: "Python",
   javascript: "JavaScript",
   typescript: "TypeScript",
@@ -45,7 +47,8 @@ function render() {
     .map((r) => {
       const name = r.full_name.split("/")[1];
       const desc = r.desc_zh || r.desc_en || "（暂无简介）";
-      const lang = activeTab === "overall" && r.language ? `<span class="lang-tag">${esc(r.language)}</span>` : "";
+      const LANG_TABS = ["python", "javascript", "typescript", "go", "java", "rust"];
+      const lang = !LANG_TABS.includes(activeTab) && r.language ? `<span class="lang-tag">${esc(r.language)}</span>` : "";
       const biliUrl = `https://search.bilibili.com/all?keyword=${encodeURIComponent(name)}`;
       return `<li class="row${r.rank <= 3 ? " top3" : ""}">
         <div class="row-grid">

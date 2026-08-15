@@ -3193,5 +3193,355 @@
   "en": "FHEVM, a full-stack framework for integrating Fully Homomorphic Encryption (FHE) with blockchain applications",
   "zh": "Zama 的全同态加密（FHE）区块链框架，让智能合约直接在密文上计算、数据全程不解密，适合开发加密投票、私密 DeFi 等链上隐私应用的区块链开发者。",
   "v": 2
+ },
+ "rasbt/LLMs-from-scratch": {
+  "en": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step",
+  "zh": "Sebastian Raschka《Build a Large Language Model (From Scratch)》一书的配套代码，用 PyTorch 从零逐步实现 GPT 类模型，覆盖注意力机制、预训练到微调，适合想搞懂 LLM 内部原理的工程师和学生。",
+  "v": 2
+ },
+ "punkpeye/awesome-mcp-servers": {
+  "en": "A collection of MCP servers.",
+  "zh": "收录 MCP (Model Context Protocol) server 的资源清单，按数据库、浏览器、搜索等场景分类。想给 Claude 等 AI 客户端接入外部工具和数据时，可当目录查找现成的 server。",
+  "v": 2
+ },
+ "opencv/opencv": {
+  "en": "Open Source Computer Vision Library",
+  "zh": "老牌开源计算机视觉库，C++ 实现并提供 Python 等语言绑定，覆盖图像处理、目标检测、视频分析等能力，做视觉相关开发几乎绕不开，从课程作业到工业项目都在用。",
+  "v": 2
+ },
+ "microsoft/ML-For-Beginners": {
+  "en": "12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all",
+  "zh": "Microsoft 出的机器学习入门课程，12 周 26 课，用 Scikit-learn 讲经典 ML 算法，配测验和练习题，不涉及深度学习，适合零基础学习者按周自学打底子。",
+  "v": 2
+ },
+ "mlabonne/llm-course": {
+  "en": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
+  "zh": "Maxime Labonne 整理的 LLM 学习路线图，按科学家、工程师等方向分路径，配 Colab notebook 覆盖微调、量化、RAG 等主题，适合想系统入门大模型的开发者按图索骥。",
+  "v": 2
+ },
+ "dair-ai/Prompt-Engineering-Guide": {
+  "en": "Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
+  "zh": "DAIR.AI 维护的 prompt engineering 指南，汇集提示词技巧、论文、RAG 与 AI Agent 资料，有多语言网页版，写提示词想有章法可循时可当参考手册查阅。",
+  "v": 2
+ },
+ "tesseract-ocr/tesseract": {
+  "en": "Tesseract Open Source OCR Engine (main repository)",
+  "zh": "开源 OCR 引擎，基于 LSTM，支持 100 多种语言的文字识别，可通过命令行或 API 调用，适合做文档扫描、图片转文字等需要本地离线识别的任务。",
+  "v": 2
+ },
+ "daytonaio/daytona": {
+  "en": "Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code",
+  "zh": "为 AI 生成代码提供安全隔离运行环境的基础设施，可快速创建 sandbox 执行不可信代码。做 Agent 产品、需要让 AI 安全地跑代码时，可用它承载执行环境。",
+  "v": 2
+ },
+ "microsoft/AI-For-Beginners": {
+  "en": "12 Weeks, 24 Lessons, AI for All!",
+  "zh": "Microsoft 的 AI 入门课程，12 周 24 课，覆盖神经网络、计算机视觉、NLP 等方向，用 Jupyter Notebook 边学边练，适合有编程基础、想系统过一遍 AI 知识的学习者。",
+  "v": 2
+ },
+ "shanraisshan/claude-code-best-practice": {
+  "en": "from vibe coding to agentic engineering - practice makes claude perfect",
+  "zh": "整理 Claude Code 使用经验的实践仓库，主题是从 vibe coding 走向 agentic engineering，汇集配置和工作流技巧，适合想提高 Claude Code 使用效率的开发者参考。",
+  "v": 2
+ },
+ "pathwaycom/llm-app": {
+  "en": "Ready-to-run cloud templates for RAG, AI pipelines, and enterprise search with live data. Docker-friendly.Always in sync with Sharepoint, Google Drive, S3, Kafka, PostgreSQL, real-time data APIs, and more.",
+  "zh": "Pathway 出的 RAG 与 AI pipeline 模板集，可用 Docker 部署，能与 SharePoint、Google Drive、S3、Kafka 等数据源实时同步，适合企业搭建随数据更新的检索问答服务。",
+  "v": 2
+ },
+ "ageitgey/face_recognition": {
+  "en": "The world's simplest facial recognition api for Python and the command line",
+  "zh": "基于 dlib 的 Python 人脸识别库，几行代码即可完成人脸检测、定位和比对，还附带命令行工具，适合快速给应用加人脸识别功能或做原型验证。",
+  "v": 2
+ },
+ "BerriAI/litellm": {
+  "en": "The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI, vLLM, Nvidia NIM]",
+  "zh": "统一的 LLM 网关和 SDK，用 OpenAI 格式调用 100 多家模型 API（Bedrock、Azure、Anthropic 等），带成本统计、负载均衡和日志，适合需要多模型切换或统一管理调用的团队。",
+  "v": 2
+ },
+ "AntonOsika/gpt-engineer": {
+  "en": "CLI platform to experiment with codegen. Precursor to: https://lovable.dev",
+  "zh": "早期的 AI 代码生成 CLI 工具，一句需求描述就能生成整个项目代码，是 Lovable 的前身。如今更多是 codegen 领域的历史参考，适合研究 AI 写代码演进的人回看。",
+  "v": 2
+ },
+ "hesreallyhim/awesome-claude-code": {
+  "en": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC. A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
+  "zh": "收集 Claude Code 生态资源的清单，涵盖 skills、subagent、hooks、slash command、状态栏等，想给 Claude Code 找现成配置和工具的用户可以当索引来翻。",
+  "v": 2
+ },
+ "run-llama/llama_index": {
+  "en": "LlamaIndex is the leading document agent and OCR platform",
+  "zh": "把私有数据接入 LLM 的数据框架，提供文档解析、索引、检索与 Agent 能力，现聚焦文档 Agent 与 OCR 方向，适合构建 RAG 应用和企业文档问答系统。",
+  "v": 2
+ },
+ "Avik-Jain/100-Days-Of-ML-Code": {
+  "en": "100 Days of ML Coding",
+  "zh": "“100 天机器学习编程”打卡教程，用信息图配代码把经典 ML 算法拆成每日小任务，内容偏基础且更新较早，适合零基础学习者按天推进、建立入门框架。",
+  "v": 2
+ },
+ "roboflow/supervision": {
+  "en": "We write your reusable computer vision tools.",
+  "zh": "Roboflow 出的计算机视觉工具库，提供检测框绘制、目标跟踪、区域计数、数据集处理等可复用组件，配合 YOLO 等模型使用，能省掉 CV 应用里大量样板代码。",
+  "v": 2
+ },
+ "GokuMohandas/Made-With-ML": {
+  "en": "Learn how to develop, deploy and iterate on production-grade ML applications.",
+  "zh": "讲生产级 ML 应用全流程的开源课程，从设计、开发到部署迭代，覆盖测试、CI/CD 和基于 Ray 的分布式训练，适合想补 MLOps 工程实践的机器学习工程师。",
+  "v": 2
+ },
+ "calesthio/OpenMontage": {
+  "en": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+  "zh": "开源的 agentic 视频制作系统，提供 12 条制作 pipeline、上百个工具和大量 agent skill 文件，把 Claude Code 等编码助手改造成视频生产流水线，适合想用 AI 做视频的创作者。",
+  "v": 2
+ },
+ "GitHubDaily/GitHubDaily": {
+  "en": "坚持分享 GitHub 上高质量、有趣实用的开源技术教程、开发者工具、编程网站、技术资讯。A list cool, interesting projects of GitHub.",
+  "zh": "持续更新的中文 GitHub 项目分享合集，日常推介实用开源工具、教程和技术资讯，适合当发现新项目的订阅源，中文开发者找热门仓库时很省事。",
+  "v": 2
+ },
+ "microsoft/qlib": {
+  "en": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
+  "zh": "Microsoft 的 AI 量化投资平台，覆盖数据处理、因子研究、模型训练到回测的全流程，支持监督学习、强化学习等多种范式，适合量化研究员做策略研究和实验。",
+  "v": 2
+ },
+ "elder-plinius/CL4R1T4S": {
+  "en": "LEAKED SYSTEM PROMPTS FOR CHATGPT, CLAUDE, GEMINI, GROK, PERPLEXITY, CURSOR, LOVABLE, REPLIT, AND MORE! - AI SYSTEMS TRANSPARENCY FOR ALL!",
+  "zh": "收集各家 AI 产品泄露 system prompt 的仓库，覆盖 ChatGPT、Claude、Gemini、Cursor 等，适合研究提示词设计、想了解各产品行为约束的从业者参考。",
+  "v": 2
+ },
+ "rohitg00/ai-engineering-from-scratch": {
+  "en": "Learn it. Build it. Ship it for others.",
+  "zh": "主打动手实践的 AI engineering 课程仓库，用 Python 从零构建 AI agents、计算机视觉等应用，强调学完就能做出可交付的东西，适合想边学边做的开发者。",
+  "v": 2
+ },
+ "zhayujie/CowAgent": {
+  "en": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-model, multi-channel. Lightweight, extensible, one-line install. (formerly chatgpt-on-wechat)",
+  "zh": "由 chatgpt-on-wechat 演进而来的开源 AI 助手框架，支持多模型和微信等多渠道接入，带工具调用、记忆和插件机制，适合搭建自己的聊天机器人或个人助理。",
+  "v": 2
+ },
+ "apache/airflow": {
+  "en": "Apache Airflow - A platform to programmatically author, schedule, and monitor workflows",
+  "zh": "Apache 的工作流编排平台，用 Python 代码定义 DAG 来调度和监控任务，插件生态丰富，是数据工程领域的事实标准之一，适合搭建 ETL 和定时任务管道。",
+  "v": 2
+ },
+ "microsoft/ai-agents-for-beginners": {
+  "en": "18 Lessons to Get Started Building AI Agents",
+  "zh": "Microsoft 的 AI Agent 入门课程，18 课覆盖 Agent 设计模式、工具使用、RAG 到多 Agent 协作，配 Jupyter Notebook 示例代码，适合初学者系统上手 Agent 开发。",
+  "v": 2
+ },
+ "usestrix/strix": {
+  "en": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
+  "zh": "开源的 AI 渗透测试工具，让 AI agents 像黑客一样动态测试应用、发现并验证漏洞，再给出修复建议，适合开发和安全团队在上线前自查应用安全。",
+  "v": 2
+ },
+ "huginn/huginn": {
+  "en": "Create agents that monitor and act on your behalf. Your agents are standing by!",
+  "zh": "老牌自托管自动化工具，Ruby 实现，通过组合各种 agents 监控网页、RSS、邮件并按条件触发动作，相当于自建的 IFTTT，适合注重数据自主的自动化玩家。",
+  "v": 2
+ },
+ "HKUDS/nanobot": {
+  "en": "Ultra-lightweight, open-source, self-hosted personal AI agent framework in Python with WebUI, tools, memory, MCP, multi-agent workflows, automation, and chat apps",
+  "zh": "香港大学 HKUDS 实验室出的轻量级个人 AI agent 框架，Python 自托管，带 WebUI、记忆、MCP 和多 agent 工作流，可接入聊天应用，适合自己搭一个私有 AI 助理。",
+  "v": 2
+ },
+ "hugohe3/ppt-master": {
+  "en": "AI turns documents or topics into real, native PowerPoint decks—with native shapes, transitions and animations, data-backed charts and tables on demand, audio narration from speaker notes, and support for your own .pptx templates. · by Hugo He",
+  "zh": "用 AI 把文档或主题直接生成原生 PowerPoint 的工具，产出带原生形状、动画和数据图表的 .pptx，支持自有模板与备注配音，适合经常要做汇报演示的职场用户。",
+  "v": 2
+ },
+ "kepano/obsidian-skills": {
+  "en": "Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.",
+  "zh": "Obsidian CEO kepano 发布的 Agent Skills 集合，教 AI 助手使用 Obsidian CLI 和 Markdown、Bases、JSON Canvas 等开放格式，适合想让 Claude 帮忙管理笔记库的 Obsidian 用户。",
+  "v": 2
+ },
+ "sickn33/agentic-awesome-skills": {
+  "en": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,005+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
+  "zh": "本地优先的 agent skills 管理工具，收录 2000 多个技能并提供 CLI、MCP 和目录检索，负责技能发现、选择与校验，适合想批量管理和调用 Agent Skills 的用户。",
+  "v": 2
+ },
+ "agno-agi/agno": {
+  "en": "Build, run, and manage agent platforms.",
+  "zh": "Python 的多 agent 框架（前身是 Phidata），用于构建、运行和管理带记忆、知识与工具的 Agent 系统，配套运行时和管理界面，适合工程团队做生产级 Agent 应用。",
+  "v": 2
+ },
+ "langchain-ai/langgraph": {
+  "en": "Build resilient agents.",
+  "zh": "LangChain 团队的 Agent 编排框架，用图结构定义有状态的多步工作流，支持持久化、人工介入和流式输出，适合构建流程需要精细可控的复杂 Agent 应用。",
+  "v": 2
+ },
+ "mindsdb/mindshub": {
+  "en": "The unified workspace where open-source models get things done for you.",
+  "zh": "MindsDB 团队推出的统一工作台，目标是让开源模型替你完成实际任务，与 Claude Cowork 等 agent 生态衔接。适合想用开源模型驱动日常事务自动化、又希望底层可控的用户。",
+  "v": 2
+ },
+ "AstrBotDevs/AstrBot": {
+  "en": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative.",
+  "zh": "中文社区活跃的多平台 LLM 聊天机器人框架，可接入 QQ、微信、Telegram、Discord 等 IM，支持多种模型和插件扩展。适合想在自己的群聊或私聊里部署一个可定制 AI 助手的开发者。",
+  "v": 2
+ },
+ "wshobson/agents": {
+  "en": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot, and Gemini CLI",
+  "zh": "一套现成的 agent 插件市场，收录大量按领域分工的 subagent 和 skill，兼容 Claude Code、Codex CLI、Cursor、Gemini CLI 等多个 harness。适合不想从零写配置、直接装现成专家 agent 的用户。",
+  "v": 2
+ },
+ "bytedance/UI-TARS-desktop": {
+  "en": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
+  "zh": "字节跳动开源的多模态 GUI agent 栈，基于 UI-TARS 视觉语言模型，让 AI 通过看屏幕直接操作电脑和浏览器。适合研究 computer use、browser use 或想搭桌面自动化 agent 的开发者。",
+  "v": 2
+ },
+ "Yeachan-Heo/oh-my-claudecode": {
+  "en": "Teams-first Multi-agent orchestration for Claude Code",
+  "zh": "Claude Code 的多 agent 编排扩展，名字致敬 oh-my-zsh，把单个 Claude Code 会话升级成可并行分工的团队式工作流。适合重度 Claude Code 用户提升复杂任务的吞吐。",
+  "v": 2
+ },
+ "github/awesome-copilot": {
+  "en": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
+  "zh": "GitHub 官方维护的 Copilot 社区配置库，收录 instructions、prompts、custom agents 和 skills。适合 GitHub Copilot 用户直接拿现成配置调教自己的编码助手，不用自己摸索写法。",
+  "v": 2
+ },
+ "bojieli/ai-agent-book": {
+  "en": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+  "zh": "李博杰所著《深入理解 AI Agent：设计原理与工程实践》的开源主仓库，含全书正文、编译版 PDF 和按章配套代码。适合想系统学习 agent 设计与 context engineering 的中文读者。",
+  "v": 2
+ },
+ "patchy631/ai-engineering-hub": {
+  "en": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
+  "zh": "一个 AI 工程实战教程库，以 Jupyter Notebook 形式深入讲 LLM、RAG、MCP 和真实场景的 agent 应用，每个案例可直接跑。适合边看边动手的 AI 应用开发学习者。",
+  "v": 2
+ },
+ "CopilotKit/CopilotKit": {
+  "en": "The Frontend Stack for Agents & Generative UI. React, Angular, Mobile, Slack, and more. Makers of the AG-UI Protocol",
+  "zh": "把 AI copilot 和 agent 嵌进自己产品的前端框架，提供 React、Angular 等组件和 AG-UI 协议，支持聊天界面与 generative UI。适合要在应用内做 AI 助手功能的前端和全栈开发者。",
+  "v": 2
+ },
+ "ashishpatel26/500-AI-Agents-Projects": {
+  "en": "The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more.",
+  "zh": "按行业整理的 500 个 AI agent 用例合集，覆盖医疗、金融、教育、零售等场景，并附对应开源项目链接。适合找选题灵感、或想看某个行业 agent 落地参考的产品和开发人员。",
+  "v": 2
+ },
+ "khoj-ai/khoj": {
+  "en": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
+  "zh": "可自托管的 AI 第二大脑，能对你的本地文档和网页内容问答，支持自建 agent、定时自动化和深度研究，兼容 GPT、Claude、Llama 等在线或本地模型。适合想把个人知识库变成私人助理的人。",
+  "v": 2
+ },
+ "reworkd/AgentGPT": {
+  "en": "Assemble, configure, and deploy autonomous AI Agents in your browser.",
+  "zh": "在浏览器里组装和运行自主 AI agent 的项目：给一个目标，它自动拆解任务并逐步执行。是早期 AutoGPT 热潮中的网页版代表，适合快速体验和演示自主 agent 的工作方式。",
+  "v": 2
+ },
+ "ItzCrazyKns/Vane": {
+  "en": "Vane is an AI-powered answering engine.",
+  "zh": "开源的 AI 答案引擎，输入问题后联网检索并生成带来源引用的回答，可自托管，作者此前以 Perplexica 知名。适合想要一个自己部署、类似 Perplexity 的搜索问答工具的用户。",
+  "v": 2
+ },
+ "HKUDS/DeepTutor": {
+  "en": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+  "zh": "港大 HKUDS 实验室开源的个性化 AI 辅导系统，主打长期陪伴式学习，结合 deep research 能力做交互式讲解。适合想用 AI 私教方式啃论文、教材或系统学习新领域的人。",
+  "v": 2
+ },
+ "continuedev/continue": {
+  "en": "open-source coding agent",
+  "zh": "开源 coding agent，从 VS Code、JetBrains 插件起家，现已扩展到 CLI，可自由选择模型和上下文来源。适合想自建、自控 AI 编码助手而不绑定单一商业产品的开发者。",
+  "v": 2
+ },
+ "VectifyAI/PageIndex": {
+  "en": "PageIndex: Document Index for Vectorless, Reasoning-based RAG",
+  "zh": "一种不用向量库的 RAG 方案：把长文档解析成层级目录树索引，让 LLM 靠推理在树上导航定位内容。适合处理长 PDF、报告问答，尤其是嫌 embedding 检索不准或不想维护向量库的场景。",
+  "v": 2
+ },
+ "agentscope-ai/QwenPaw": {
+  "en": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
+  "zh": "AgentScope 团队推出的个人 AI 助手，安装简单，可部署在本机或云端，能接入多个聊天应用并按需扩展能力。适合想要一个自己掌控、随处可用的私人 agent 的用户。",
+  "v": 2
+ },
+ "datawhalechina/happy-llm": {
+  "en": "从零开始构建大模型",
+  "zh": "Datawhale 出品的免费中文教程“从零开始构建大模型”，从原理讲到动手实现，并覆盖 RAG 与 agent 内容。适合想系统入门 LLM、又偏好中文教材和实践路线的学习者。",
+  "v": 2
+ },
+ "iOfficeAI/AionUi": {
+  "en": "Open-source 24/7 Cowork app for OpenClaw, Hermes, Claude Code, Codex, OpenCode and 20+ more CLI Agent | Customize your assistants | Team them up｜Star if you like it!",
+  "zh": "给 CLI agent 套上图形界面的开源应用，支持 Claude Code、Codex、OpenClaw 等 20 多种命令行 agent，可自定义助手并让它们组队协作。适合不习惯纯终端操作、想统一管理多个 agent 的用户。",
+  "v": 2
+ },
+ "JCodesMore/ai-website-cloner-template": {
+  "en": "Clone any website with one command using AI coding agents",
+  "zh": "一个让 AI coding agent 一条命令克隆网站的模板工程，把抓取页面、还原结构的流程固化成 boilerplate。适合想快速复刻网页布局做原型或学习参考的开发者。",
+  "v": 2
+ },
+ "MadsLorentzen/ai-job-search": {
+  "en": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+  "zh": "跑在本机的求职自动化框架，基于 Claude Code：评估职位匹配度、按岗位定制 CV、写求职信、准备面试。适合正在批量投递、想把求职流程工程化的求职者，fork 后即可改成自己的版本。",
+  "v": 2
+ },
+ "huggingface/agents-course": {
+  "en": "This repository contains the Hugging Face Agents Course.",
+  "zh": "Hugging Face 官方的免费 agents 课程仓库，从基础概念讲到用 LangChain、LlamaIndex 等框架动手构建 agent，含练习与认证。适合想系统学 agent 开发的入门到进阶学习者。",
+  "v": 2
+ },
+ "HKUDS/Vibe-Trading": {
+  "en": "\"Vibe-Trading: Your Personal Trading Agent\"",
+  "zh": "港大 HKUDS 开源的个人交易 agent，用 LLM 驱动策略研究，覆盖算法交易与回测，并支持 MCP 接入。适合想实验 AI 辅助量化交易流程的开发者，实盘使用需自担风险。",
+  "v": 2
+ },
+ "Gitlawb/openclaude": {
+  "en": "runs anywhere. uses anything",
+  "zh": "一个开源的 AI coding CLI 工具，口号是“到处能跑、什么都能用”，走跨环境、不绑定特定模型的路线。项目公开信息有限，适合想尝鲜轻量命令行 coding agent 的用户自行评估。",
+  "v": 2
+ },
+ "nanocoai/nanoclaw": {
+  "en": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
+  "zh": "OpenClaw 的轻量替代品，跑在容器里以隔离风险，基于 Anthropic 的 Agents SDK，可接 WhatsApp、Telegram、Slack、Gmail 等，自带记忆和定时任务。适合想要个人消息助理但在意安全边界的用户。",
+  "v": 2
+ },
+ "VoltAgent/awesome-agent-skills": {
+  "en": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
+  "zh": "收录 1000 多个 agent skill 的精选清单，来源包括官方团队和社区，兼容 Claude Code、Codex、Gemini CLI、Cursor 等。适合想给自己的 agent 快速加能力、按场景挑现成 skill 的用户。",
+  "v": 2
+ },
+ "Fincept-Corporation/FinceptTerminal": {
+  "en": "FinceptTerminal is a modern finance application offering advanced market analytics, investment research, and economic data tools, designed for interactive exploration and data-driven decision-making in a user-friendly environment.",
+  "zh": "C++ 编写的开源金融终端，对标 Bloomberg Terminal 的形态，提供市场分析、投资研究和经济数据工具，并集成 AI agent 能力。适合想要免费桌面级投研工作台的个人投资者和分析师。",
+  "v": 2
+ },
+ "feder-cr/Jobs_Applier_AI_Agent_AIHawk": {
+  "en": "Open source AI job application bot in Python: auto apply to jobs, with a tailored resume and cover letter for each posting.",
+  "zh": "曾在 GitHub 爆火的开源自动求职 bot：批量抓取职位，为每个岗位自动生成定制简历和求职信并提交申请。适合想大幅压缩海投时间的求职者，使用前需注意目标平台的规则限制。",
+  "v": 2
+ },
+ "CloakHQ/CloakBrowser": {
+  "en": "Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 30/30 tests passed.",
+  "zh": "做了源码级指纹修补的隐身 Chromium，宣称通过全部主流 bot 检测测试，可直接替换 Playwright 使用。适合做爬虫、自动化测试或 AI agent 浏览任务时被反爬机制拦截的开发者。",
+  "v": 2
+ },
+ "topoteretes/cognee": {
+  "en": "Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term memory across sessions with a self-hosted knowledge graph engine.",
+  "zh": "开源的 AI 记忆平台，用可自托管的知识图谱引擎给 agent 提供跨会话的长期记忆，把文档和对话沉淀成结构化知识。适合在做 agent 产品、被“聊完就忘”问题困扰的开发者。",
+  "v": 2
+ },
+ "getzep/graphiti": {
+  "en": "Build Real-Time Knowledge Graphs for AI Agents",
+  "zh": "Zep 团队开源的实时知识图谱框架，支持增量更新和时间感知查询，数据变化时不必整体重建图谱。适合给 agent 搭长期记忆层、或需要把持续变化的业务数据做成可检索图谱的团队。",
+  "v": 2
+ },
+ "ComposioHQ/composio": {
+  "en": "Composio powers 1000+ toolkits, tool search, context management, authentication, and a sandboxed workbench to help you build AI agents that turn intent into action.",
+  "zh": "agent 工具集成平台，提供 1000 多个应用的 toolkit、工具搜索、鉴权托管和沙箱执行环境，让 agent 能安全调用 Gmail、Slack、GitHub 等外部服务。适合不想逐个对接第三方 API 的 agent 开发者。",
+  "v": 2
+ },
+ "e2b-dev/awesome-ai-agents": {
+  "en": "A list of AI autonomous agents",
+  "zh": "E2B 维护的 AI 自主 agent 项目清单，按开源与闭源分类收录并持续更新。适合想快速盘点 agent 赛道有哪些玩家、找同类项目做对比调研的开发者和研究者。",
+  "v": 2
+ },
+ "simstudioai/sim": {
+  "en": "Sim is the collaborative workspace to build, deploy, and monitor AI agents and workflows. Used by 100,000+ builders.",
+  "zh": "开源的 agent 与 workflow 可视化搭建平台，在协作画布上构建、部署并监控 AI 工作流。适合想用拖拽方式把多步 AI 任务串成可上线服务的团队，作为闭源自动化平台的自托管替代。",
+  "v": 2
+ },
+ "labring/FastGPT": {
+  "en": "FastGPT is a knowledge-based platform built on the LLMs, offers a comprehensive suite of out-of-the-box capabilities such as data processing, RAG retrieval, and visual AI workflow orchestration, letting you easily develop and deploy complex question-answering systems without the need for extensive setup or configuration.",
+  "zh": "国内流行的开源知识库问答平台，内置数据处理、RAG 检索和可视化 workflow 编排，开箱即可搭建复杂问答系统。适合企业或团队快速落地智能客服、内部知识库助手等场景。",
+  "v": 2
  }
 }
