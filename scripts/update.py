@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""拉取 GitHub Star 排行数据，翻译简介，生成 data/rankings.json。
+"""拉取 GitHub Star 排行数据，生成 data/rankings.json。
 
 每日由 GitHub Actions 调用；本地调试直接运行。
+中文导读由 Claude 撰写并缓存在 data/translations.json（v=2），
+本脚本只消费缓存；新上榜且无缓存的项目先显示英文原简介，
+由维护者定期让 Claude 补写。DEEPSEEK_API_KEY 仅作为可选兜底。
 环境变量：
   GITHUB_TOKEN      可选，提高 API 配额
-  DEEPSEEK_API_KEY  可选，缺失时简介保留英文原文
+  DEEPSEEK_API_KEY  可选兜底，日常不配置
 """
 import json
 import os
@@ -80,12 +83,15 @@ def load_json(path, default):
 
 
 def translate_batch(items, api_key):
-    """items: [(full_name, description)] -> {full_name: 中文简介}"""
-    numbered = "\n".join(f"{i + 1}. {desc}" for i, (_, desc) in enumerate(items))
+    """items: [(full_name, 项目信息文本)] -> {full_name: 中文导读}"""
+    numbered = "\n".join(f"{i + 1}. {info}" for i, (_, info) in enumerate(items))
     prompt = (
-        "下面是若干条 GitHub 开源项目的英文简介，逐条翻译成简洁自然的中文，"
-        "保留产品名、技术名词原文不译。只输出 JSON 数组，第 i 个元素是第 i 条的译文，"
-        "不要输出其他内容。\n\n" + numbered
+        "下面是若干个 GitHub 开源项目的信息（项目名｜语言｜标签｜英文简介）。"
+        "为每个项目写一段 40-80 字的中文介绍，说清楚两点：它是什么、"
+        "具体能用来做什么（对使用者的实际用处）。基于给定信息概括，"
+        "不要编造简介里没有的数据；产品名和技术名词保留原文。"
+        "只输出 JSON 数组，第 i 个元素是第 i 个项目的介绍，不要输出其他内容。\n\n"
+        + numbered
     )
     payload = {
         "model": "deepseek-chat",
@@ -133,6 +139,7 @@ def main():
                 "full_name": full_name,
                 "url": it["html_url"],
                 "desc_en": strip_emoji(it["description"] or ""),
+                "topics": (it.get("topics") or [])[:6],
                 "stars": it["stargazers_count"],
                 "forks": it["forks_count"],
                 "language": it["language"] or "",
@@ -143,12 +150,21 @@ def main():
         lists[key] = rows
         time.sleep(3)  # search API 限流 10 次/分钟（未认证）
 
-    # 增量翻译：只翻缓存里没有、或英文简介变了的
+    # 增量生成中文导读：缓存里没有、英文简介变了、或还是旧版直译格式（v!=2）的才送模型
     api_key = os.environ.get("DEEPSEEK_API_KEY")
+
+    def repo_info(row):
+        topics = " ".join(row["topics"]) or "无"
+        return (
+            f"{row['full_name'].split('/')[1]}｜{row['language'] or '未标注'}"
+            f"｜{topics}｜{row['desc_en'] or '无简介'}"
+        )
+
     pending = [
-        (fn, row["desc_en"])
+        (fn, repo_info(row))
         for fn, row in seen.items()
-        if row["desc_en"] and cache.get(fn, {}).get("en") != row["desc_en"]
+        if cache.get(fn, {}).get("en") != row["desc_en"]
+        or cache.get(fn, {}).get("v") != 2
     ]
     if pending and not api_key:
         print(f"未配置 DEEPSEEK_API_KEY，{len(pending)} 条简介保留英文", file=sys.stderr)
@@ -162,7 +178,7 @@ def main():
                 print(f"  批次翻译失败，保留英文：{e}", file=sys.stderr)
                 continue
             for fn, zh in result.items():
-                cache[fn] = {"en": seen[fn]["desc_en"], "zh": strip_emoji(zh)}
+                cache[fn] = {"en": seen[fn]["desc_en"], "zh": strip_emoji(zh), "v": 2}
             print(f"  {min(i + TRANSLATE_BATCH, len(pending))}/{len(pending)}")
 
     for rows in lists.values():

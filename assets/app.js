@@ -43,7 +43,7 @@ function render() {
 
   $ranking.innerHTML = rows
     .map((r) => {
-      const [owner, name] = r.full_name.split("/");
+      const name = r.full_name.split("/")[1];
       const desc = r.desc_zh || r.desc_en || "（暂无简介）";
       const lang = activeTab === "overall" && r.language ? `<span class="lang-tag">${esc(r.language)}</span>` : "";
       const biliUrl = `https://search.bilibili.com/all?keyword=${encodeURIComponent(name)}`;
@@ -51,9 +51,8 @@ function render() {
         <div class="row-grid">
           <span class="num">${String(r.rank).padStart(2, "0")}</span>
           <span class="body-col">
-            <a class="repo-link" href="${r.url}" target="_blank" rel="noopener">
-              <span class="repo-owner">${esc(owner)} /</span>
-              <span class="repo-name">${esc(name)}</span>
+            <a class="repo-link" href="${r.url}" target="_blank" rel="noopener" title="${esc(r.full_name)}">
+              <span class="repo-name">${esc(name)}</span><span class="go">↗</span>
             </a>
             <p class="desc">${esc(desc)}</p>
           </span>

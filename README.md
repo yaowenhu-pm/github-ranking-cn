@@ -14,7 +14,7 @@
 
 1. GitHub Actions 每日 08:30（北京时间）运行 [scripts/update.py](scripts/update.py)
 2. 通过 GitHub Search API 拉取各榜单 Top 100
-3. 新入榜项目的英文简介由 DeepSeek 翻译成中文，结果缓存在 [data/translations.json](data/translations.json)，已翻过的不再重复调用
+3. 每个项目的中文导读（是什么、能用来做什么）由 Claude 撰写，缓存在 [data/translations.json](data/translations.json)；新上榜且尚无导读的项目先显示英文原简介，由维护者定期补写
 4. 生成 [data/rankings.json](data/rankings.json) 并提交，GitHub Pages 自动发布
 
 前端为纯静态页面（无框架、无构建），样式为纸质榜单风格。
@@ -23,7 +23,6 @@
 
 ```bash
 export GITHUB_TOKEN=xxx        # 可选，提高 API 配额
-export DEEPSEEK_API_KEY=xxx    # 可选，缺失时简介保留英文
 python3 scripts/update.py
 python3 -m http.server 8646    # 打开 http://localhost:8646
 ```

@@ -18,11 +18,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 拉取数据并翻译
+      - name: 拉取数据
         run: python scripts/update.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
 
       - name: 提交更新
         run: |
