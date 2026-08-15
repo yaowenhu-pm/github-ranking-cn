@@ -120,7 +120,7 @@ main { max-width: 860px; margin: 0 auto; padding: 8px 24px 48px; }
 .row {
   border-bottom: 1px solid var(--rule);
 }
-.row a {
+.row-grid {
   display: grid;
   grid-template-columns: 84px 1fr auto;
   gap: 20px;
@@ -128,7 +128,8 @@ main { max-width: 860px; margin: 0 auto; padding: 8px 24px 48px; }
   padding: 22px 8px;
   transition: background 0.15s;
 }
-.row a:hover { background: rgba(23, 21, 15, 0.035); }
+.row:hover .row-grid { background: rgba(23, 21, 15, 0.035); }
+.repo-link:hover .repo-name { border-bottom: 2px solid var(--vermilion); }
 
 .num {
   font-family: var(--serif);
@@ -186,6 +187,21 @@ main { max-width: 860px; margin: 0 auto; padding: 8px 24px 48px; }
   font-size: 12px;
   color: var(--ink-faint);
 }
+.bili {
+  display: inline-block;
+  margin-top: 7px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 2px 8px;
+  letter-spacing: 0.05em;
+}
+.bili:hover {
+  color: #fff;
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+}
 .delta-up { color: var(--vermilion); font-weight: 600; }
 .delta-down { color: var(--green); font-weight: 600; }
 .delta-new { color: var(--vermilion); letter-spacing: 0.1em; }
@@ -211,7 +227,7 @@ footer a:hover { color: var(--ink); border-bottom-color: var(--ink); }
 
 @media (max-width: 560px) {
   .masthead { padding-top: 36px; }
-  .row a {
+  .row-grid {
     grid-template-columns: 44px 1fr;
     gap: 12px;
     padding: 18px 2px;

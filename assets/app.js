@@ -46,19 +46,23 @@ function render() {
       const [owner, name] = r.full_name.split("/");
       const desc = r.desc_zh || r.desc_en || "（暂无简介）";
       const lang = activeTab === "overall" && r.language ? `<span class="lang-tag">${esc(r.language)}</span>` : "";
+      const biliUrl = `https://search.bilibili.com/all?keyword=${encodeURIComponent(name)}`;
       return `<li class="row${r.rank <= 3 ? " top3" : ""}">
-        <a href="${r.url}" target="_blank" rel="noopener">
+        <div class="row-grid">
           <span class="num">${String(r.rank).padStart(2, "0")}</span>
           <span class="body-col">
-            <span class="repo-owner">${esc(owner)} /</span>
-            <span class="repo-name">${esc(name)}</span>
+            <a class="repo-link" href="${r.url}" target="_blank" rel="noopener">
+              <span class="repo-owner">${esc(owner)} /</span>
+              <span class="repo-name">${esc(name)}</span>
+            </a>
             <p class="desc">${esc(desc)}</p>
           </span>
           <span class="meta-col">
             <span class="stars">${r.stars.toLocaleString("en-US")}</span>
             <div class="sub-meta">${deltaHtml(r)}${lang}</div>
+            <a class="bili" href="${biliUrl}" target="_blank" rel="noopener">B站讲解</a>
           </span>
-        </a>
+        </div>
       </li>`;
     })
     .join("");
